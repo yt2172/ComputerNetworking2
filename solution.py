@@ -25,7 +25,7 @@ def webServer(port=13331):
             #Send one HTTP header line into socket
             #Fill in start
             content = ''
-            content += "HTTP/1.1 200 ok"
+            content += "HTTP/1.1 200 OK\n"
             content += "Content-Type: text/html;charset=utf-8"
             content += "Content-Length: "+ str(len(outputdata)) +"\n"+"\n"
             content += outputdata
@@ -42,7 +42,7 @@ def webServer(port=13331):
             #Send response message for file not found (404)
             #Fill in start
             outputdata = ""
-            outputdata += "HTTP/1.1 404 not found"
+            outputdata += "HTTP/1.1 404 not found\n"
             outputdata += "Content-Length: "+ str(len("404 Not Found")) +"\n"+"\n"
             outputdata += "404 Not Found"
             for i in range(0, len(outputdata)):
