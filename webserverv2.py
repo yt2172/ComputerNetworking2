@@ -25,7 +25,9 @@ def webServer(port=13331):
             #Send one HTTP header line into socket
             #Fill in start
             content = ''
-            content += "HTTP/1.1 200 OK\n" + "\n"
+            content += "HTTP/1.1 200 OK"
+            content += "\nContent-Type: text/html\nCharset=utf-8\n"
+            content += "Content-Length: "+ str(len(outputdata)) +"\n"
             content += outputdata
             outputdata = content
             #Fill in end
@@ -41,7 +43,7 @@ def webServer(port=13331):
             #Fill in start
             outputdata = ""
             outputdata += "HTTP/1.1 404 not found"
-            outputdata += "Content-Length: "+ str(len("404 Not Found")) +"\n"+"\n"
+            outputdata += "Content-Length: "+ str(len("404 Not Found")) +"\n"
             outputdata += "404 Not Found"
             for i in range(0, len(outputdata)):
                 connectionSocket.send(outputdata[i].encode())
