@@ -28,7 +28,6 @@ def webServer(port=13331):
             content += "HTTP/1.1 200 OK\n" + "\n"
             content += outputdata
             outputdata = content
-            print(outputdata)
             #Fill in end
 
             #Send the content of the requested file to the client
