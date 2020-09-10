@@ -25,7 +25,7 @@ def webServer(port=13331):
             #Send one HTTP header line into socket
             #Fill in start
             content = ''
-            content += "HTTP/1.1 200 OK"
+            content += "HTTP/1.1 200 ok"
             content += "Content-Type: text/html;charset=utf-8"
             content += "Content-Length: "+ str(len(outputdata)) +"\n"+"\n"
             content += outputdata
